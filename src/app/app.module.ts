@@ -12,6 +12,13 @@ import { PostComponent } from './components/post/post.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 
+
+
+
+import { CommentsComponent } from './components/comments/comments.component';
+import { CommentDetailsComponent } from './components/comment-details/comment-details.component';
+import {CommentComponent} from "./components/comment/comment.component";
+
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {
@@ -25,21 +32,31 @@ const routes: Routes = [
     children: [
       {path: ':id', component: PostDetailsComponent}
     ]
-  }
+  },
+    {
+        path: 'comments', component: CommentsComponent,
+        children: [
+            {path: ':id', component: CommentDetailsComponent}
+        ]
+    }
 ]
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserComponent,
-    UsersComponent,
-    HomeComponent,
-    UserDetailsComponent,
-    PostComponent,
-    PostsComponent,
-    PostDetailsComponent,
+    declarations: [
+        AppComponent,
+        UserComponent,
+        UsersComponent,
+        HomeComponent,
+        UserDetailsComponent,
+        PostComponent,
+        PostsComponent,
+        PostDetailsComponent,
+        CommentComponent,
+        CommentsComponent,
+        CommentDetailsComponent,
+        CommentComponent,
 
-  ],
+    ],
   imports: [
     BrowserModule,
     HttpClientModule,
