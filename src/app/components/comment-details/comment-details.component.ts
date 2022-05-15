@@ -9,7 +9,7 @@ import {IComment} from "../../interfaces/IComment";
 })
 export class CommentDetailsComponent implements OnInit {
 
-  constructor(private activatedRoute:ActivatedRoute, private router:Router) { }
+  constructor(private activatedRoute:ActivatedRoute) { }
 comment:IComment;
 
   ngOnInit(): void {
