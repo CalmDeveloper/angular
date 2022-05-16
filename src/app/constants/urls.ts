@@ -1,8 +1,9 @@
-
+import {environment} from '../../environments/environment'
+const {API}=environment
 const urls={
-    users:'https://jsonplaceholder.typicode.com/users',
-    posts:'https://jsonplaceholder.typicode.com/posts',
-    comments:'https://jsonplaceholder.typicode.com/comments'
+    users:`${API}/users`,
+    posts:`${API}/posts`,
+    comments:`${API}/comments`
 }
 
 export {urls}

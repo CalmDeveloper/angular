@@ -1,0 +1,9 @@
+.user{
+    color: black;
+}
+.user a{
+    text-decoration: none;
+}
+.active a{
+   color: red;
+}

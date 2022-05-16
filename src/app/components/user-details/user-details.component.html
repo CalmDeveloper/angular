@@ -1,8 +1,26 @@
-<!--<div>-->
-<!--    {{user.id}}-->
-<!--    {{user.name}}-->
-<!--    {{user.username}}-->
-<!--    {{user.email}}-->
-<!--</div>-->
-
-<p>{{user | json}}</p>
+<div *ngIf="user">
+    <ul>
+    <li>id: {{user.id}} name: {{user.name}} </li>
+    <li>username: {{user.username}}</li>
+    <li>email: {{user.email}}</li>
+    <ol>address:
+        <li>street: {{user.address.street}}</li>
+        <li>suite: {{user.address.suite}}</li>
+        <li>city: {{user.address.city}}</li>
+        <li>zipcode: {{user.address.zipcode}}</li>
+        <ul>
+            geo:
+            <li>at: {{user.address.geo.lat}}</li>
+            <li>lng: {{user.address.geo.lng}}</li>
+        </ul>
+    </ol>
+    <li>phone: {{user.phone}} </li>
+   <li>website: {{user.website}}</li>
+<ul>
+    company:
+    <li>name: {{user.company.name}}</li>
+    <li>catchPhrase: {{user.company.catchPhrase}}</li>
+    <li>bs: {{user.company.bs}}</li>
+</ul>
+    </ul>
+</div>

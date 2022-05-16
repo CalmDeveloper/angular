@@ -1,7 +1,7 @@
 export interface ICompany {
 
     name: string,
-    catchPhrase: string
+    catchPhrase: string,
     bs: string
 
 }

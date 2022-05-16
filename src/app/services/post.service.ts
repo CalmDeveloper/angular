@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {IPost} from "../interfaces/IPost";
+import {IPost} from "../interfaces";
 import {Observable} from "rxjs";
-import {urls} from "../constants/urls";
+import {urls} from "../constants";
 
 
 @Injectable({
@@ -14,7 +14,7 @@ export class PostService {
   getAll():Observable<IPost[]>{
     return this.http.get<IPost[]>(urls.posts)
   }
-  getById():Observable<IPost>{
+  getById(id:string):Observable<IPost>{
     return this.http.get<IPost>(urls.posts)
   }
 }

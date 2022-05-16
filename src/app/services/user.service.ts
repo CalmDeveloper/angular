@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {IUser} from "../interfaces/IUser";
-import {urls} from "../constants/urls";
+import {IUser} from "../interfaces";
+import {urls} from "../constants";
+import {IUsersDetails} from "../interfaces/usersDetails";
 
 
 
@@ -14,11 +15,11 @@ export class UserService {
 
   constructor(private http:HttpClient) {
   }
-  getAll():Observable<IUser[]>{
-    return this.http.get<IUser[]>(urls.users)
+  getAll():Observable<IUsersDetails[]>{
+    return this.http.get<IUsersDetails[]>(urls.users)
   }
 
-  getByID(id: number):Observable<IUser>{
-    return this.http.get<IUser>(`${urls.users}/${id}`)
+  getByID(id: string):Observable<IUsersDetails>{
+    return this.http.get<IUsersDetails>(`${urls.users}/${id}`)
   }
 }
