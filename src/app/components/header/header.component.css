@@ -1,0 +1,16 @@
+.header{
+    height: 100px;
+    font-size: 26px;
+    background: blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header a{
+    text-decoration: none;
+    color: white;
+}
+
+.active a{
+    color: red;
+}
