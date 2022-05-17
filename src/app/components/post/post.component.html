@@ -1,5 +1,4 @@
-<div>
-    {{post.id}}  {{post.title}}
-
-    <button (click)="navigateMe(post)">details</button>
+<div class="post" *ngIf="post">
+    {{post.id}}--{{post.title}}--
+    <button (click)="navigateMe()">details</button>
 </div>

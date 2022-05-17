@@ -16,7 +16,7 @@ post:IPost
 
   ngOnInit(): void {
   }
-  navigateMe(post:IPost) {
-    this.router.navigate([post.id], {relativeTo: this.activatedRoute, state: {data: post}});
+  navigateMe() {
+    this.router.navigate([this.post.id], {relativeTo: this.activatedRoute, state: {post: this.post}}).then();
   }
 }

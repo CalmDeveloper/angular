@@ -1,6 +1,6 @@
-<div>
-    {{post.userId}}
-    {{post.id}}
-    {{post.title}}
-    {{post.body}}
+<div *ngIf="post" class="postDetails">
+    <div>userId: {{post.userId}}</div>
+    <div>id: {{post.id}}</div>
+    <div>title: {{post.title}}</div>
+    <div>body: {{post.body}}</div>
 </div>
