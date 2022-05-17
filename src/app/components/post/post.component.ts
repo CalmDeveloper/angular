@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IPost} from "../../interfaces/IPost";
+import {IPost} from "../../interfaces";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -10,13 +10,20 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class PostComponent implements OnInit {
 
   constructor(private router: Router,
-              private activatedRoute: ActivatedRoute) { }
-@Input()
-post:IPost
+              private activatedRoute: ActivatedRoute) {
+  }
+
+  @Input()
+  post: IPost
 
   ngOnInit(): void {
   }
+
   navigateMe() {
-    this.router.navigate([this.post.id], {relativeTo: this.activatedRoute, state: {post: this.post}}).then();
+    this.router.navigate([this.post.id],
+        {
+          relativeTo: this.activatedRoute,
+          state: {post: this.post}
+        }).then();
   }
 }
