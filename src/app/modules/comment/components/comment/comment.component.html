@@ -1,0 +1,5 @@
+
+    <div *ngIf="comment" routerLinkActive="active" class="comment">
+         <a [routerLink]="comment.id" [state]="{comment}" > {{comment.id}}  {{comment.name}}</a>
+    </div>
+
