@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IUsersDetails} from "../../interfaces";
 
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
