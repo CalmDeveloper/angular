@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {IPost} from "../../interfaces/post.interface";
-import {PostService} from "../../services/post.service";
+import {PostService} from "../../services";
 
 
 
@@ -22,8 +22,7 @@ export class PostDetailsComponent implements OnInit {
                 this.post = state
             } else
             {
-               this.postService.getByID(id).subscribe(value => this.post=value
-               )
+              this.activatedRoute.data.subscribe(({post}) => this.post=post)
             }
         });
     }
