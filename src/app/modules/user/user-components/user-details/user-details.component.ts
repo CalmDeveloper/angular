@@ -21,11 +21,10 @@ export class UserDetailsComponent implements OnInit {
       const state = this.route.getCurrentNavigation()?.extras?.state?.['user'] as IUser
       if (state) {
         this.user = state
+      } else {
+        this.activatedRoute.data.subscribe(({user}) => this.user = user)
       }
-      else {
-        this.userService.getByID(id).subscribe(value => this.user = value)
-      }
-    });
 
+    })
   }
 }

@@ -5,12 +5,19 @@ import {PostsComponent} from "./components/posts/posts.component";
 import {PostDetailsComponent} from "./components/post-details/post-details.component";
 import {PostsResolver} from "./resolver/posts.resolver";
 import {PostResolver} from "./resolver/post.resolver";
+import {PostsGuard} from "./guard/posts.guard";
 
 const routes: Routes = [
-    {path:'',component:PostsComponent, resolve:{posts:PostsResolver},
-        children:[
-            {path:':id',component:PostDetailsComponent, resolve:{post:PostResolver}}
-        ]}
+    {
+        path: '',
+        component: PostsComponent,
+        resolve: {posts: PostsResolver},
+        canActivate: [PostsGuard],
+        canDeactivate: [PostsGuard],
+        children: [
+            {path: ':id', component: PostDetailsComponent, resolve: {post: PostResolver}}
+        ]
+    }
 ];
 
 @NgModule({
