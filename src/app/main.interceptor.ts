@@ -25,7 +25,6 @@ isRefreshing =false;
             catchError((res: HttpErrorResponse) => {
                 if (res && res.error && res.status === 401) {
                     return this.handle401Error(request, next)
-
                 }
                 return throwError(() => new Error('token invalid or expired'))
             })

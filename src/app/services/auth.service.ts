@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {IToken, IUser} from "../interfaces";
-import {Observable} from "rxjs";
+import {Observable, tap} from "rxjs";
 import {urls} from "../constants";
 
 @Injectable({
@@ -31,9 +31,14 @@ export class AuthService {
      localStorage.removeItem(this.accessTokenKey)
         localStorage.removeItem(this.refreshTokenKey)
     }
-    refresh():Observable<IToken>{
-     const refresh = this.getRefreshToken()
-    return this.httpClient.post<IToken>(`${urls.auth}/ refersh`,{refresh})
+    refresh(): Observable<IToken> {
+        const refresh = this.getRefreshToken();
+        console.log(refresh);
+        return this.httpClient.post<IToken>(`${urls.auth}/refresh`, {refresh}).pipe(
+            tap((tokens: IToken) => {
+                this.setToken(tokens)
+            })
+        )
     }
     getAccessToken():string{
         return localStorage.getItem(this.accessTokenKey) as string

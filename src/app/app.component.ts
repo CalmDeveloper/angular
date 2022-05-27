@@ -13,6 +13,8 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     if (this.authService.isAuthorization()){
       this.router.navigate(['cars'])
+    }else {
+      this.router.navigate(['login'])
     }
   }
 
