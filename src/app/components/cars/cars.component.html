@@ -1,1 +1,5 @@
-<p>cars works!</p>
+<div *ngFor="let car of cars">
+    <div *ngIf="car">
+        {{car.id}} -- {{car.model}} -- {{car.price}} -- {{car.year}}
+    </div>
+</div>

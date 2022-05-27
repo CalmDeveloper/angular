@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validator, Validators} from "@angular/forms";
+import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} from "@angular/forms";
+import {AuthService} from "../../services";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-register',
@@ -8,8 +11,8 @@ import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validator, Va
 })
 export class RegisterComponent implements OnInit {
 form: FormGroup
-
-  constructor() {
+userNameError:string
+  constructor(private  authService:AuthService, private router:Router) {
   this.createForm()
   }
 
@@ -23,12 +26,23 @@ form: FormGroup
   },[this.checkPasswords])
   }
 
-  register():void {
-    console.log(this.form)
+  register(): void {
+    const rowValue = this.form.getRawValue()
+    delete rowValue.confirmPassword
+    this.authService.register(rowValue).subscribe({
+          next: () => {
+            this.router.navigate(['login'])
+          },
+          error: e => {
+            this.userNameError = e.error.username[0]
+          }
+        }
+    )
   }
-  checkPasswords(form:AbstractControl):ValidationErrors | null {
-const password = form.get('password')
+
+  checkPasswords(form: AbstractControl): ValidationErrors | null {
+    const password = form.get('password')
     const confirmPassword = form.get('confirmPassword')
-    return password?.value=== confirmPassword?.value?null:{notSame:true}
+    return password?.value === confirmPassword?.value ? null : {notSame: true}
   }
 }
