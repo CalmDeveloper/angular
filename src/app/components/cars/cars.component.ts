@@ -3,6 +3,7 @@ import {CarService} from "../../services";
 import {ICar} from "../../interfaces";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RegEx} from '../../constants'
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
@@ -37,6 +38,7 @@ updatedCar:ICar|null;
               const updateCar = this.cars.find(f => f.id === this.updatedCar?.id);
               Object.assign(updateCar, value)
               this.updatedCar = null
+
           } )
       }
 
