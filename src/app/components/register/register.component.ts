@@ -31,7 +31,7 @@ userNameError:string
     delete rowValue.confirmPassword
     this.authService.register(rowValue).subscribe({
           next: () => {
-            this.router.navigate(['login'])
+            this.router.navigate(['login']).then()
           },
           error: e => {
             this.userNameError = e.error.username[0]

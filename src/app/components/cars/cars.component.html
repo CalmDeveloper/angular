@@ -1,5 +1,13 @@
+<form [formGroup]="form">
+    <div><label>model: <input type="text" formControlName="model"></label></div>
+    <div><label>year: <input type="text" formControlName="year"></label></div>
+    <div><label>price: <input type="text" formControlName="price"></label></div>
+    <button (click)="save()">{{!!updatedCar ? 'update' : 'save'}}</button>
+</form>
 <div *ngFor="let car of cars">
     <div *ngIf="car">
         {{car.id}} -- {{car.model}} -- {{car.price}} -- {{car.year}}
+        <button (click)="delate(car.id)">delate</button>
+        <button (click)="update(car)">update</button>
     </div>
 </div>
