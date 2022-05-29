@@ -1,2 +1,3 @@
 <h3>App Works</h3>
-<app-users></app-users>
+<h3 *ngIf="user">{{user.email}}</h3>
+<app-users (userEmmit)="catch($event)"></app-users>
