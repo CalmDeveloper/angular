@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IUser} from "../../interfaces/user.interface";
+import {DataService} from "../../services/data.service";
 
 @Component({
   selector: 'app-user',
@@ -8,10 +9,13 @@ import {IUser} from "../../interfaces/user.interface";
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService:DataService) { }
 @Input()
 user:IUser;
   ngOnInit(): void {
   }
 
+  save() {
+this.dataService.storage.next(this.user)
+  }
 }
