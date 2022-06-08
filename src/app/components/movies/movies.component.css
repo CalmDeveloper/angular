@@ -1,0 +1,29 @@
+.movies{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 5px;
+    position: absolute;
+    top: 50px;
+    left: 310px;
+    z-index: 1;
+}
+/*.navigation{*/
+/*    display: flex;*/
+/*    position: fixed;*/
+/*    top: 700px;*/
+/*    left: 25px;*/
+/*    z-index: 3;*/
+/*}*/
+/*.navigation button{*/
+/*    margin: 5px;*/
+/*    font-size: 14px;*/
+/*    border-radius: 4px;*/
+/*    padding: 5px;*/
+/*    cursor: pointer;*/
+/*    width: 120px;*/
+/*}*/
+/*.navigation button:hover{*/
+/*    background-color: #187dbb;*/
+/*    color: white;*/
+/*}*/

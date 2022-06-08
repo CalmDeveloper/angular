@@ -1,0 +1,11 @@
+<div *ngIf="movie">
+
+    <div class="movie" (click)="movieInfo()">
+        <img [src]="posterPath"  alt="{{movie.title}}" >
+        <div class="wrap">
+            <h3>{{movie.title}}</h3>
+<!--            <StarRatingForAllMovies vote_average={vote_average}/>-->
+        </div>
+    </div>
+</div>
+

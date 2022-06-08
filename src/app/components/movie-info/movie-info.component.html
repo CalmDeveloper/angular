@@ -1,0 +1,27 @@
+<div class="movieInfo" *ngIf="movie">
+    <div class="poster"><img [src]="posterPath"  alt="{{movie.title}}"> </div>
+
+    <div class="wraper">
+        <h1>{{movie.title}}</h1>
+
+<!--        <div className={css.rating}><StarRatingForAllMovies vote_average={vote_average}/> <a href={imdbLink}><img src={imdbLogo} alt="imdb logo"/></a></div>-->
+
+<!--        <div class='mediumText'>Genres: <span className="color">{{movie.genresOfOneMovie}}</span></div>-->
+
+<!--        <div class='mediumText'>Сountry: <span className="color">{{movie.country}}</span></div>-->
+
+        <div class='mediumText'>Ran time: <span className="color">{{movie.runtime}} min</span></div>
+
+        <div class='mediumText'>Release date: <span className="color">{{movie.release_date}}</span></div>
+
+      <div class='mediumText'>Budget: <span className="color">{{movie.budget}}</span></div>
+
+   <div class='mediumText'>Profit: <span className="color">{{movie.revenue}}</span></div>
+
+        <div class='mediumText'>Original language: <span className="color">{{movie.original_language}}</span></div>
+
+        <div class="tagline">{{movie.tagline}}</div>
+
+        <div class="overview">{{movie.overview}}</div>
+    </div>
+</div>
